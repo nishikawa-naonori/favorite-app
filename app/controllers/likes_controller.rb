@@ -4,6 +4,7 @@ class LikesController < ApplicationController
   before_action :post_params
 
   def create
+    binding.pry
     Like.create(user_id: current_user.id, post_id: params[:id])
   end
 
