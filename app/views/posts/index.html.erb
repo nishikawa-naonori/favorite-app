@@ -11,27 +11,16 @@
       <th colspan="2"></th>
     </tr>
   </thead>
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
 
-        <%# 以下を追記 %>
-        <% if current_user.liked_by?(post.id) %>
-          <%# <td>いいねを外す</td> %>
-          <%# ↓ 以下のように編集 %>
-          <td><%= link_to 'いいね外す', destroy_like_path(post), method: :DELETE %> <%= post.likes.count %></td>
-        <% else %>
-          <%# <td>いいね</td> %>
-          <%# ↓ 以下のように編集 %>
-         <td><%= link_to 'いいねする', create_like_path(post), method: :POST %> <%= post.likes.count %></td>
-        <% end %>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<tbody>
+  <% @posts.each do |post| %>
+    <tr id="post_<%= post.id %>">
+      <%= render 'post', post: post %>
+    </tr>
+  <% end %>
+</tbody>
+
+
 </table>
 <br>
 <%= link_to 'New Post', new_post_path %>
