@@ -4,12 +4,12 @@ class LikesController < ApplicationController
   before_action :post_params
 
   def create
-    binding.pry
+    #binding.pry
     Like.create(user_id: current_user.id, post_id: params[:id])
   end
 
   def destroy
-    binding.pry
+    #binding.pry
     Like.find_by(user_id: current_user.id, post_id: params[:id]).destroy
   end
 
