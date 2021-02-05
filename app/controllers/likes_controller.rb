@@ -16,6 +16,9 @@ class LikesController < ApplicationController
   private
 
   def post_params
+    
     @post = Post.find(params[:id])
+    @post1 = Post.find(params[:id])
+    #binding.pry
   end
 end

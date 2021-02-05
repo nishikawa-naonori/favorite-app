@@ -2,6 +2,10 @@
 
 <%# alert('いいねが押せている！'); %>
 
-console.log("いいねを押す"); 
+console.log("いいねを押す");
 
-document.getElementById('post_<%= @post.id %>').innerHTML = '<%= j(render @post) %>'
+const inputValue = <%= @post.id %>
+
+console.log(inputValue);
+
+document.getElementById('post1_<%= @post1.id %>').innerHTML = '<%= j(render @post1) %>'

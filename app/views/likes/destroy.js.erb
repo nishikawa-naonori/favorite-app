@@ -2,6 +2,11 @@
 
 <%# alert('いいねを解除できている!'); %>
 
-console.log("いいねを外す"); 
+console.log("いいねを外す");
 
-document.getElementById('post_<%= @post.id %>').innerHTML = '<%= j(render @post) %>'
+const inputValue = <%= @post.id %>
+
+console.log(inputValue);
+
+
+document.getElementById('post1_<%= @post.id %>').innerHTML = '<%= j(render @post) %>'
