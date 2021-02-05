@@ -4,6 +4,4 @@
 
 console.log("いいねを押す"); 
 
-console.log(@post.id); 
-
 document.getElementById('post_<%= @post.id %>').innerHTML = '<%= j(render @post) %>'
