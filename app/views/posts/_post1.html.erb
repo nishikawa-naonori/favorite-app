@@ -1,0 +1,12 @@
+<td><%= post1.title %></td>
+
+
+<%# 「liked_by?(post.id)」は、ユーザーが「いいね」を押しているかどうかを判別するためのメソッド %>
+
+<% if current_user.liked_by?(post1.id) %>    
+  <td><%= link_to 'いいね外す', destroy_like_path(post1), method: :DELETE, remote: true %> <%= post1.likes.count %></td>
+<% else %>
+  <td><%= link_to 'いいねする', create_like_path(post1), method: :POST, remote: true %> <%= post1.likes.count %></td>
+<% end %>
+
+
