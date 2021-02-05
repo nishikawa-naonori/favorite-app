@@ -1,5 +1,7 @@
 <%# app/views/likes/create.js.erb %>
 
-alert('いいねが押せている！');
+<%# alert('いいねが押せている！'); %>
+
+console.log("88888"); 
 
 document.getElementById('post_<%= @post.id %>').innerHTML = '<%= j(render @post) %>'
