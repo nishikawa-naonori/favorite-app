@@ -6,11 +6,13 @@ class LikesController < ApplicationController
   def create
     #binding.pry
     Like.create(user_id: current_user.id, post_id: params[:id])
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy
     #binding.pry
     Like.find_by(user_id: current_user.id, post_id: params[:id]).destroy
+    redirect_back(fallback_location: root_path)
   end
 
   private
