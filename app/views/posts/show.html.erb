@@ -15,10 +15,11 @@
 <%= link_to 'Back', posts_path %>
 
 <table>
-<tbody>
-    <tr id="post1_<%= @post.id %>">
-      <%= render 'post1', post1: @post %>
-    </tr>
-</tbody>
+
+  <tbody>
+      <tr id="post1_<%= @post.id %>">
+        <%= render 'post1', post1: @post %>
+      </tr>
+  </tbody>
 
 </table>
