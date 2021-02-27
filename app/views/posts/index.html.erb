@@ -1,11 +1,17 @@
+<%# views/home/index.html.erb %>
 
+<% if user_signed_in? %>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'ログイン', new_user_session_path %>
+  <%= link_to '新規登録', new_user_registration_path %>
+<% end %>
 
+<%# views/home/index.html.erbの最下部に以下を追記 %>
 
+<%= link_to '投稿ページへ', posts_path %>
 
-
-<%# views/posts/index.html.erb %>
-
-<%= link_to 'Back', root_path %>
+<%#= link_to 'Back', root_path %>
 
 <p id="notice"><%= notice %></p>
 <h1>Posts</h1>
