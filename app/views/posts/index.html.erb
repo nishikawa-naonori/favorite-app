@@ -6,26 +6,35 @@
 <% end %>
 
 
+
+<p id="notice"><%= notice %></p>
 <h1>Posts</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
 
+      <th colspan="2"></th>
+    </tr>
+  </thead>
 
-      <h2>Title</h2>
-
-
-
+<tbody>
   <% @posts.each do |post| %>
-   
-      <h3><%= post.title %></h3>
+    <tr>
+      <td><%= post.title %></td>
 
-      <h3> いいね <%= post.likes.count %> </h3>
+      <td> いいね <%= post.likes.count %> </td>
 
-      <h3><%= link_to 'Show', post %></h3>
-      <h3><%= link_to 'Edit', edit_post_path(post) %></h3>
-      <h3><%= link_to 'Destroy', post, method: :delete, data: { confirm: '本当に削除しますか?' } %></h3>
+      <td><%= link_to 'Show', post %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
-  
+    </tr>
   <% end %>
+</tbody>
 
+
+</table>
 
 <%= link_to 'New Post', new_post_path %>
 
