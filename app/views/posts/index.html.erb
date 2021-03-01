@@ -1,3 +1,15 @@
+<script>
+function rel() {
+  if (window.name != "any") {
+    location.reload();
+    window.name = "any";
+  } else {
+    window.name = "";
+  }
+}
+rel()
+</script>
+
 <% if user_signed_in? %>
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
 <% else %>
@@ -7,32 +19,20 @@
 
 
 
-<p id="notice"><%= notice %></p>
+
 <h1>Posts</h1>
 <table>
-  <thead>
-    <tr>
-      <th>Title</th>
 
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-<tbody>
+  <h2>　Title</h2>
   <% @posts.each do |post| %>
     <tr>
       <td><%= post.title %></td>
-
       <td> いいね <%= post.likes.count %> </td>
-
       <td><%= link_to 'Show', post %></td>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
+      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
     </tr>
   <% end %>
-</tbody>
-
 
 </table>
 
