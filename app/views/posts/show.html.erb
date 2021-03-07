@@ -13,7 +13,7 @@
 <%= link_to 'Back', posts_path %>
 
 <table>
-      <tr id="post_<%= @post.id %>">
+      <tr id="<%= @post.id %>">
         <%= render 'post', post: @post %>
       </tr>
 </table>
